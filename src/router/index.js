@@ -1,16 +1,24 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import VueRouter from 'vue-router'
+import Table from '@/components/Table'
+import Editpost from '@/components/Editpost'
 
 
-Vue.use(Router)
+Vue.use(VueRouter);
+const router = new VueRouter({
+    routes: [
+      {
+        path: '/',
+        name: 'Table',
+        component: Table
+      },
+      {
+        path: '/editpost/:postid',
+        name: 'Editpost',
+        component: Editpost
+      }
+    ]
+  })
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
-})
+export default router
+
