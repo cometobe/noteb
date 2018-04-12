@@ -7,10 +7,9 @@ import router from './router'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 
+import fullCalendar from './components/fullCalendar.vue'
+Vue.component('full-calendar', fullCalendar)
 import store from './store/index'
-// import { createStore } from './store'
-// import { createRouter } from './router'
-// import { sync } from 'vuex-router-sync'
 
 Vue.use(Vuex);
 Vue.config.productionTip = false;

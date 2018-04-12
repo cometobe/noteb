@@ -7,19 +7,21 @@ Vue.use(Vuex);
 
 const state = {
   posttable: {},
-  lists:[]
+  lists:[],
+  postevent:[]
 };
 
 const actions = {
   fetchpostData: function ({commit, state}) {
     return new Promise(function (resolve, reject) {
       axios.get('/api/posttable').then((res) => {
-        state.posttable = res.data;
+        commit('savepost', res);
+        // state.posttable = res.data;
         // console.log(state);
         //  console.log(res);
       })
         .catch((error) => {
-          this.error = error;
+          // this.error = error;
           console.log(error)
         });
       // console.log(state);
@@ -46,13 +48,27 @@ const getters = {
           let objl={};
           objl.title=state.posttable[p].title;
           objl.id=state.posttable[p]._id;
-          state.lists.push(objl)
+          state.lists.push({})
         }
         return state.lists
-    }
+    },
+  postevent:function (state) {
+    for(let p in state.posttable){
+
+          state.postevent.push({title:state.posttable[p].title,start:state.posttable[p].createtime.slice(0,10),
+            end:state.posttable[p].createtime.slice(0,10),id:state.posttable[p]._id})
+        }
+        console.log('事件',state.postevent);
+        return state.postevent
+  }
 };
 
-const mutations = {};
+const mutations = {
+
+  savepost(state, res) {
+    return state.posttable = res.data;
+  }
+};
 
 export default {
   state,

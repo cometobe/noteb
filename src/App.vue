@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <Menu mode="horizontal" :theme="theme1" active-name="1">
-      <MenuItem name="1">
+    <Menu mode="horizontal" :theme="theme1">
+      <MenuItem name="1" >
         <Icon type="ios-paper"></Icon>
-        内容管理
+        <router-link to="/">首页</router-link>
       </MenuItem>
       <MenuItem name="2">
         <Icon type="ios-people"></Icon>
-        用户管理
+        <router-link to="/fullCalendar">日历</router-link>
       </MenuItem>
       <Submenu name="3">
         <template slot="title">
           <Icon type="stats-bars"></Icon>
-          统计分析
+          视图切换
         </template>
         <MenuGroup title="使用">
           <MenuItem name="3-1">新增和启动</MenuItem>
@@ -26,19 +26,11 @@
       </Submenu>
       <MenuItem name="4">
         <Icon type="settings"></Icon>
-        综合设置
+        <router-link to="/editor">MD编辑器</router-link>
       </MenuItem>
       <MenuItem name="5">
 
         <Button type="primary" shape="circle" icon="ios-search"></Button>
-        <Button type="primary" icon="ios-search">Search</Button>
-        <Button type="primary" shape="circle" icon="ios-search">Search</Button>
-        <Button type="primary" shape="circle">Circle</Button>
-        <!--<br><br>-->
-        <!--<Button type="ghost" shape="circle" icon="ios-search"></Button>-->
-        <!--<Button type="ghost" icon="ios-search">Search</Button>-->
-        <!--<Button type="ghost" shape="circle" icon="ios-search">Search</Button>-->
-        <!--<Button type="ghost" shape="circle">Circle</Button>-->
       </MenuItem>
     </Menu>
     <router-view/>
@@ -64,6 +56,11 @@
       console.log(this.$store.state.posts.lists);
 //      console.log(this.$store.state);
     },
+    methods:{
+      route: function(){
+        alert(1)
+      }
+    }
   }
 </script>
 
