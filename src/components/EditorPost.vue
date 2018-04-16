@@ -8,10 +8,10 @@
         <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
       </Select>
       <label>日期</label>
-      <DatePicker type="date" placeholder="Select date" placement="bottom-end"></DatePicker>
+      <DatePicker v-model="postdate" type="date" placeholder="Select date" placement="bottom-end"></DatePicker>
 
       <div id="editor">
-        <mavon-editor style="height: 100%" v-model="value"></mavon-editor>
+        <mavon-editor style="height: 100%" v-model="test11" :editable="true"></mavon-editor>
       </div>
     </div>
   </div>
@@ -22,11 +22,17 @@
   import 'mavon-editor/dist/css/index.css'
 
   export default {
-    name: 'editor',
+    name: 'editorpost',
     data() {
       return {
         value: '22222221',
-        title: 'test',
+        title: this.$store.getters.postbyid(this.$route.params.id).title,
+        postdate:this.$store.getters.postbyid(this.$route.params.id).createtime,
+//        posts:this.$route.params.id,
+//        posts: this.$store.state.posttable.filter(o => o.id === this.$route.params.id)[0].id,
+//        test:this.$store.state.posts.getters.postid(this.$router.params.id),
+//        id:this.$router.params.id,
+        post:'',
         selects: '',
         cityList: [
           {
@@ -61,12 +67,17 @@
       // or 'mavon-editor': mavonEditor
     },
     computed: {
-      test: {
-        get () {
-          return this.$store.state
+
+//      ...mapGetters('postbyid'),
+      test11:{
+        get(){
+//          console.log('get',this.$store.state.posts.posttable[0],this.$route.params.id);
+          return this.$store.getters.postbyid(this.$route.params.id).text
+//          return this.$route.params.id
+//          return this.$store.posts.getters.postbyid(this.route.state,this.$router.params.id)
         },
-        set (val) {
-          this.$store.commit('setTest', val)
+        set(val){
+          return this.$store.commit('savepostbyid', val)
         }
       }
     }
@@ -79,6 +90,6 @@
     width: 99%;
     height: 580px;
     position: relative;
-    z-index: -1;
+    z-index: 1;
   }
 </style>

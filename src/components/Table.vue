@@ -66,7 +66,6 @@
     computed: {
 //      ccc:this.$store.dispatch('fetchpostData'),
 //      ddd:this.$store.getters.titlelist
-
     },
 
     methods: {}

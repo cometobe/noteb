@@ -122,7 +122,7 @@
       return {
         currentMonth: moment().startOf('month'),
         isLismit: true,
-        eventLimit: 6,
+        eventLimit: 3,
         showMore: false,
         morePos: {
           top: 0,
@@ -294,7 +294,7 @@
         display: flex;
         .day-cell {
           flex: 1;
-          min-height: 186px;
+          min-height: 112px;
           padding: 0px 6px;
           border-right: 1px solid #e0e0e0;
           border-bottom: 1px solid #e0e0e0;
@@ -323,7 +323,7 @@
           .events-day {
             cursor: pointer;
             flex: 1;
-            min-height: 186px;
+            min-height: 112px;
             overflow: hidden;
             text-overflow: ellipsis;
             .day-number {

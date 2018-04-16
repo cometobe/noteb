@@ -11,6 +11,7 @@
 import fullCalendar from '@/components/fullCalendar'
 //import fc from './Calendar.vue'
 import Vue from 'vue'
+import router from '../router'
 //Vue.component('full-calendar', fullCalendar)
 
 export default {
@@ -24,7 +25,9 @@ export default {
       console.log('changeMonth', start.format(), end.format(), current.format())
     },
     'eventClick' (event, jsEvent, pos) {
-       console.log('eventClick', event, jsEvent, pos)
+//       console.log('eventClick', event, jsEvent, pos)
+      console.log(event.id)
+      return this.$router.push({ name: 'editorpost', params: {id:event.id}})
     },
     'dayClick' (day, jsEvent) {
       console.log('dayClick', day, jsEvent)

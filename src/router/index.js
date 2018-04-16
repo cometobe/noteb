@@ -4,6 +4,7 @@ import Table from '@/components/Table'
 import Editpost from '@/components/Editpost'
 import fullCalendar from '@/components/todo'
 import editor from '@/components/EditorMd'
+import editorpost from '@/components/EditorPost'
 
 
 Vue.use(VueRouter);
@@ -29,6 +30,11 @@ const router = new VueRouter({
         path: '/editor',
         name: 'editor',
         component: editor
+      },
+      {
+        path: '/editorpost/:id',
+        name: 'editorpost',
+        component: editorpost
       }
     ]
   })
