@@ -77,7 +77,8 @@
 //          return this.$store.posts.getters.postbyid(this.route.state,this.$router.params.id)
         },
         set(val){
-          return this.$store.commit('savepostbyid', val)
+          console.log('输入',val);
+          this.$store.commit('savepostbyid', val)
         }
       }
     }

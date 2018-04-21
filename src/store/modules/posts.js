@@ -36,7 +36,10 @@ const actions = {
   //       }
   //       return state.lists
   //   }
-
+  ,
+  savetest(value){
+    return console.log('保存文本',value)
+  }
 };
 
 const getters = {
@@ -70,12 +73,11 @@ const getters = {
 };
 
 const mutations = {
-
   savepost(state, res) {
     return state.posttable = res.data;
   },
-  savepostbyid(val){
-    console.log('保存文本',val)
+  savepostbyid(value){
+    return console.log('保存文本',value)
   }
 };
 

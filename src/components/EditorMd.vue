@@ -11,7 +11,7 @@
       <DatePicker type="date" placeholder="Select date" placement="bottom-end"></DatePicker>
 
       <div id="editor">
-        <mavon-editor style="height: 100%" v-model="value"></mavon-editor>
+        <mavon-editor style="height: 100%" v-model="test"></mavon-editor>
       </div>
     </div>
   </div>
@@ -63,10 +63,11 @@
     computed: {
       test: {
         get () {
-          return this.$store.state
+          return ''
         },
         set (val) {
-          this.$store.commit('setTest', val)
+
+          console.log('输入',val);
         }
       }
     }
@@ -79,6 +80,6 @@
     width: 99%;
     height: 580px;
     position: relative;
-    z-index: -1;
+    z-index: 1;
   }
 </style>
