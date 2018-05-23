@@ -66,7 +66,6 @@
           return ''
         },
         set (val) {
-
           console.log('输入',val);
         }
       }

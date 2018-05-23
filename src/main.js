@@ -6,7 +6,7 @@ import App from './App.vue'
 import router from './router'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
-
+import $ from 'jquery'
 import fullCalendar from './components/fullCalendar.vue'
 Vue.component('full-calendar', fullCalendar)
 import store from './store/index'

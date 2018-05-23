@@ -53,7 +53,7 @@
           {
             title: '文章列表',
             expand: true,
-            children: this.$store.getters.titlelist
+            children: this.$store.state.posts.lists
           }
         ]
       }

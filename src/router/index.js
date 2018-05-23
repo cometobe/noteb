@@ -5,6 +5,8 @@ import Editpost from '@/components/Editpost'
 import fullCalendar from '@/components/todo'
 import editor from '@/components/EditorMd'
 import editorpost from '@/components/EditorPost'
+import calendar from '@/components/Calendar'
+
 
 
 Vue.use(VueRouter);
@@ -20,6 +22,11 @@ const router = new VueRouter({
         path: '/editpost/:postid',
         name: 'Editpost',
         component: Editpost
+      },
+      {
+        path: '/calendar',
+        name: 'calendar',
+        component: calendar
       },
       {
         path: '/fullCalendar',

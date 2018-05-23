@@ -26,6 +26,10 @@ const actions = {
         });
       // console.log(state);
     })
+  },
+  //
+  getposts:function ({commit, state}) {
+
   }
   // titlelist:function(state){
   //       for(let p in state.posttable){
@@ -53,6 +57,7 @@ const getters = {
       objl.id = state.posttable[p]._id;
       state.lists.push({})
     }
+    console.log(state.lists)
     return state.lists
   },
   postevent: function (state) {
